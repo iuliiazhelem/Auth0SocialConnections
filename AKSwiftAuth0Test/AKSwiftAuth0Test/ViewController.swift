@@ -20,6 +20,17 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
 
+    @IBAction func clickOpenLockUIButton(sender: AnyObject) {
+        let controller = A0Lock.sharedLock().newLockViewController()
+        controller.closable = true
+        controller.onAuthenticationBlock = { (profile, token) in
+            print("User: \(profile!)")
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
+        self.presentViewController(controller, animated: true, completion: nil)
+
+    }
+
     @IBAction func clickLinkedInButton(sender: AnyObject) {
         let success = { (profile: A0UserProfile, token: A0Token) in
             print("User: \(profile)")

@@ -18,6 +18,7 @@ static NSString *kTwitterConnectionName = @"twitter";
 - (IBAction)clickLinkedInButton:(id)sender;
 - (IBAction)clickInstagramButton:(id)sender;
 - (IBAction)clickTwitterButton:(id)sender;
+- (IBAction)clickOpenLockUIButton:(id)sender;
 
 @end
 
@@ -75,6 +76,19 @@ static NSString *kTwitterConnectionName = @"twitter";
                                                               parameters:nil
                                                                  success:success
                                                                  failure:error];
+}
+
+- (IBAction)clickOpenLockUIButton:(id)sender {
+    A0Lock *lock = [A0Lock sharedLock];
+    
+    A0LockViewController *controller = [lock newLockViewController];
+    controller.closable = YES;
+    controller.onAuthenticationBlock = ^(A0UserProfile *profile, A0Token *token) {
+        NSLog(@"User: %@", profile);
+        [self dismissViewControllerAnimated:YES completion:nil];
+    };
+    
+    [self presentViewController:controller animated:YES completion:nil];
 }
 
 @end
