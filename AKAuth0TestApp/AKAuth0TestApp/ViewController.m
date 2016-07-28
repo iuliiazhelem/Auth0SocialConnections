@@ -11,11 +11,13 @@
 
 static NSString *kLinkedInConnectionName = @"linkedin";
 static NSString *kInstagramConnectionName = @"instagram";
+static NSString *kTwitterConnectionName = @"twitter";
 
 @interface ViewController ()
 
 - (IBAction)clickLinkedInButton:(id)sender;
 - (IBAction)clickInstagramButton:(id)sender;
+- (IBAction)clickTwitterButton:(id)sender;
 
 @end
 
@@ -58,6 +60,21 @@ static NSString *kInstagramConnectionName = @"instagram";
                                                                  success:success
                                                                  failure:error];
     
+}
+
+- (IBAction)clickTwitterButton:(id)sender {
+    void(^success)(A0UserProfile *, A0Token *) = ^(A0UserProfile *profile, A0Token *token) {
+        NSLog(@"User: %@", profile);
+    };
+    void(^error)(NSError *) = ^(NSError *error) {
+        NSLog(@"Oops something went wrong: %@", error);
+        
+    };
+    A0Lock *lock = [A0Lock sharedLock];
+    [[lock identityProviderAuthenticator] authenticateWithConnectionName:kTwitterConnectionName
+                                                              parameters:nil
+                                                                 success:success
+                                                                 failure:error];
 }
 
 @end

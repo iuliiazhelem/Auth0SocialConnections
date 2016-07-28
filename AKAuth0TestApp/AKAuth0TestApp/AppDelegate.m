@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <Lock/Lock.h>
+#import <Lock-Twitter/A0TwitterAuthenticator.h>
 
 @interface AppDelegate ()
 
@@ -20,9 +21,14 @@
     A0Lock *lock = [A0Lock sharedLock];
     [lock applicationLaunchedWithOptions:launchOptions];
     
+    NSString *twitterApiKey = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"TwitterConsumerKey"];
+    NSString *twitterApiSecret = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"TwitterConsumerSecret"];
+    A0TwitterAuthenticator *twitter = [A0TwitterAuthenticator newAuthenticatorWithKey:twitterApiKey andSecret:twitterApiSecret];
+    
     A0WebViewAuthenticator *linkedin = [[A0WebViewAuthenticator alloc] initWithConnectionName:@"linkedin" lock:lock];
     A0WebViewAuthenticator *instagram = [[A0WebViewAuthenticator alloc] initWithConnectionName:@"instagram" lock:lock];
-    [lock registerAuthenticators:@[linkedin, instagram]];
+    
+    [lock registerAuthenticators:@[twitter, linkedin, instagram]];
     
     [A0LockLogger logAll];
 
