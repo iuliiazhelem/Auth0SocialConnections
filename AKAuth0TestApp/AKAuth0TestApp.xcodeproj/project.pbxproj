@@ -17,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2214BD3C1D4B5FB30000CEA4 /* AppConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppConstants.h; sourceTree = "<group>"; };
 		228153371D4794DA00F030F0 /* AKAuth0TestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AKAuth0TestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2281533B1D4794DA00F030F0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2281533D1D4794DA00F030F0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -65,6 +66,7 @@
 		228153391D4794DA00F030F0 /* AKAuth0TestApp */ = {
 			isa = PBXGroup;
 			children = (
+				2214BD3C1D4B5FB30000CEA4 /* AppConstants.h */,
 				2281533D1D4794DA00F030F0 /* AppDelegate.h */,
 				2281533E1D4794DA00F030F0 /* AppDelegate.m */,
 				228153401D4794DA00F030F0 /* ViewController.h */,

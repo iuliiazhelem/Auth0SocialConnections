@@ -7,11 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "AppConstants.h"
 #import <Lock/Lock.h>
-
-static NSString *kLinkedInConnectionName = @"linkedin";
-static NSString *kInstagramConnectionName = @"instagram";
-static NSString *kTwitterConnectionName = @"twitter";
 
 @interface ViewController ()
 
@@ -19,6 +16,7 @@ static NSString *kTwitterConnectionName = @"twitter";
 - (IBAction)clickInstagramButton:(id)sender;
 - (IBAction)clickTwitterButton:(id)sender;
 - (IBAction)clickOpenLockUIButton:(id)sender;
+- (IBAction)clickMicrosoftAccountButton:(id)sender;
 
 @end
 
@@ -89,6 +87,21 @@ static NSString *kTwitterConnectionName = @"twitter";
     };
     
     [self presentViewController:controller animated:YES completion:nil];
+}
+
+- (IBAction)clickMicrosoftAccountButton:(id)sender {
+    void(^success)(A0UserProfile *, A0Token *) = ^(A0UserProfile *profile, A0Token *token) {
+        NSLog(@"User: %@", profile);
+    };
+    void(^error)(NSError *) = ^(NSError *error) {
+        NSLog(@"Oops something went wrong: %@", error);
+        
+    };
+    A0Lock *lock = [A0Lock sharedLock];
+    [[lock identityProviderAuthenticator] authenticateWithConnectionName:kWindowsLiveConnectionName
+                                                              parameters:nil
+                                                                 success:success
+                                                                 failure:error];
 }
 
 @end

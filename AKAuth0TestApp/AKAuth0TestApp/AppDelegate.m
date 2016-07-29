@@ -9,10 +9,7 @@
 #import "AppDelegate.h"
 #import <Lock/Lock.h>
 #import <Lock-Twitter/A0TwitterAuthenticator.h>
-
-@interface AppDelegate ()
-
-@end
+#import "AppConstants.h"
 
 @implementation AppDelegate
 
@@ -21,14 +18,15 @@
     A0Lock *lock = [A0Lock sharedLock];
     [lock applicationLaunchedWithOptions:launchOptions];
     
-    NSString *twitterApiKey = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"TwitterConsumerKey"];
-    NSString *twitterApiSecret = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"TwitterConsumerSecret"];
+    NSString *twitterApiKey = [[NSBundle mainBundle] objectForInfoDictionaryKey:kTwitterConsumerKey];
+    NSString *twitterApiSecret = [[NSBundle mainBundle] objectForInfoDictionaryKey:kTwitterConsumerSecret];
     A0TwitterAuthenticator *twitter = [A0TwitterAuthenticator newAuthenticatorWithKey:twitterApiKey andSecret:twitterApiSecret];
     
-    A0WebViewAuthenticator *linkedin = [[A0WebViewAuthenticator alloc] initWithConnectionName:@"linkedin" lock:lock];
-    A0WebViewAuthenticator *instagram = [[A0WebViewAuthenticator alloc] initWithConnectionName:@"instagram" lock:lock];
+    A0WebViewAuthenticator *linkedin = [[A0WebViewAuthenticator alloc] initWithConnectionName:kLinkedInConnectionName lock:lock];
+    A0WebViewAuthenticator *instagram = [[A0WebViewAuthenticator alloc] initWithConnectionName:kInstagramConnectionName lock:lock];
+    A0WebViewAuthenticator *windowslive = [[A0WebViewAuthenticator alloc] initWithConnectionName:kWindowsLiveConnectionName lock:lock];
     
-    [lock registerAuthenticators:@[twitter, linkedin, instagram]];
+    [lock registerAuthenticators:@[twitter, linkedin, instagram, windowslive]];
     
     [A0LockLogger logAll];
 
