@@ -12,6 +12,7 @@ import Lock
 let kInstagramConnectionName = "instagram"
 let kLinkedInConnectionName = "linkedin"
 let kTwitterConnectionName = "twitter"
+let kWindowsLiveConnectionName = "windowslive"
 
 class ViewController: UIViewController {
 
@@ -64,5 +65,15 @@ class ViewController: UIViewController {
         lock.identityProviderAuthenticator().authenticateWithConnectionName(kTwitterConnectionName, parameters: nil, success: success, failure: failure)
     }
 
+    @IBAction func clickMicrosoftAccountButton(sender: AnyObject) {
+        let success = { (profile: A0UserProfile, token: A0Token) in
+            print("User: \(profile)")
+        }
+        let failure = { (error: NSError) in
+            print("Oops something went wrong: \(error)")
+        }
+        let lock = A0Lock.sharedLock()
+        lock.identityProviderAuthenticator().authenticateWithConnectionName(kWindowsLiveConnectionName, parameters: nil, success: success, failure: failure)
+    }
 }
 

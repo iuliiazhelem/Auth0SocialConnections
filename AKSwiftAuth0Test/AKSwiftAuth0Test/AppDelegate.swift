@@ -25,8 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let linkedin = A0WebViewAuthenticator(connectionName: "linkedin", lock: A0Lock.sharedLock())
         let instagram = A0WebViewAuthenticator(connectionName: "instagram", lock: A0Lock.sharedLock())
+        let windowslive = A0WebViewAuthenticator(connectionName: "windowslive", lock: A0Lock.sharedLock())
             
-        A0Lock.sharedLock().registerAuthenticators([twitter, linkedin, instagram]);
+        A0Lock.sharedLock().registerAuthenticators([twitter, linkedin, instagram, windowslive]);
 
         A0LockLogger.logAll()
         return true
