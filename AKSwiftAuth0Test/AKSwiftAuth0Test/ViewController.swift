@@ -7,12 +7,6 @@
 //
 
 import UIKit
-import Lock
-
-let kInstagramConnectionName = "instagram"
-let kLinkedInConnectionName = "linkedin"
-let kTwitterConnectionName = "twitter"
-let kWindowsLiveConnectionName = "windowslive"
 
 class ViewController: UIViewController {
 
@@ -33,39 +27,26 @@ class ViewController: UIViewController {
     }
 
     @IBAction func clickLinkedInButton(sender: AnyObject) {
-        let success = { (profile: A0UserProfile, token: A0Token) in
-            print("User: \(profile)")
-        }
-        let failure = { (error: NSError) in
-            print("Oops something went wrong: \(error)")
-        }
-        let lock = A0Lock.sharedLock()
-        lock.identityProviderAuthenticator().authenticateWithConnectionName(kLinkedInConnectionName, parameters: nil, success: success, failure: failure)
+        self.socialAuthenticateWithName(kLinkedInConnectionName)
     }
 
     @IBAction func clickInstagramButton(sender: AnyObject) {
-        let success = { (profile: A0UserProfile, token: A0Token) in
-            print("User: \(profile)")
-        }
-        let failure = { (error: NSError) in
-            print("Oops something went wrong: \(error)")
-        }
-        let lock = A0Lock.sharedLock()
-        lock.identityProviderAuthenticator().authenticateWithConnectionName(kInstagramConnectionName, parameters: nil, success: success, failure: failure)
+        self.socialAuthenticateWithName(kInstagramConnectionName)
     }
     
     @IBAction func clickTwitterButton(sender: AnyObject) {
-        let success = { (profile: A0UserProfile, token: A0Token) in
-            print("User: \(profile)")
-        }
-        let failure = { (error: NSError) in
-            print("Oops something went wrong: \(error)")
-        }
-        let lock = A0Lock.sharedLock()
-        lock.identityProviderAuthenticator().authenticateWithConnectionName(kTwitterConnectionName, parameters: nil, success: success, failure: failure)
+        self.socialAuthenticateWithName(kTwitterConnectionName)
     }
 
     @IBAction func clickMicrosoftAccountButton(sender: AnyObject) {
+        self.socialAuthenticateWithName(kWindowsLiveConnectionName)
+    }
+    
+    @IBAction func clickGoogleButton(sender: AnyObject) {
+        self.socialAuthenticateWithName(kGoogleConnectionName)
+    }
+
+    func socialAuthenticateWithName(name:String) {
         let success = { (profile: A0UserProfile, token: A0Token) in
             print("User: \(profile)")
         }
@@ -73,7 +54,7 @@ class ViewController: UIViewController {
             print("Oops something went wrong: \(error)")
         }
         let lock = A0Lock.sharedLock()
-        lock.identityProviderAuthenticator().authenticateWithConnectionName(kWindowsLiveConnectionName, parameters: nil, success: success, failure: failure)
+        lock.identityProviderAuthenticator().authenticateWithConnectionName(name, parameters: nil, success: success, failure: failure)
     }
 }
 

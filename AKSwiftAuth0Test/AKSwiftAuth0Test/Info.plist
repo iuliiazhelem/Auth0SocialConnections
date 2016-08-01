@@ -2,14 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>Auth0ClientId</key>
-    <string>1T8XeajR2FhDBAAz7JQ22mmzqCMoqzud</string>
-    <key>Auth0Domain</key>
-    <string>juliazhelem.eu.auth0.com</string>
-    <key>TwitterConsumerKey</key>
-    <string>TNDABmgYSVFxdJPCfwIprTXmG</string>
-    <key>TwitterConsumerSecret</key>
-    <string>jMwW5QvcPPPpB94lWtYKkJdG3ETmy5x2iaBiBHH7TQBDve1jzi</string>
+	<key>Auth0ClientId</key>
+	<string>1T8XeajR2FhDBAAz7JQ22mmzqCMoqzud</string>
+	<key>Auth0Domain</key>
+	<string>juliazhelem.eu.auth0.com</string>
+	<key>BUNDLE_ID</key>
+	<string>com.akvelon.AKSwiftAuth0Test</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -26,23 +24,77 @@
 	<string>1.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>None</string>
+			<key>CFBundleURLName</key>
+			<string>facebook</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb1038202126265858</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>None</string>
+			<key>CFBundleURLName</key>
+			<string>auth0</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>a0pj1N9W644zMIyI62UZqNIFnYCdsnwt9V</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>None</string>
+			<key>CFBundleURLName</key>
+			<string>Google</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.514652084725-lbq4ulvpadvb4mmumqg7q3b46mvnshcd</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>None</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.akvelon.AKSwiftAuth0Test</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
-    <key>CFBundleURLTypes</key>
-    <array>
-        <dict>
-            <key>CFBundleTypeRole</key>
-            <string>None</string>
-            <key>CFBundleURLName</key>
-            <string>auth0</string>
-            <key>CFBundleURLSchemes</key>
-            <array>
-                <string>a01T8XeajR2FhDBAAz7JQ22mmzqCMoqzud</string>
-            </array>
-        </dict>
-    </array>
+	<key>CLIENT_ID</key>
+	<string>514652084725-lbq4ulvpadvb4mmumqg7q3b46mvnshcd.apps.googleusercontent.com</string>
+	<key>FacebookAppID</key>
+	<string>1038202126265858</string>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:514652084725:ios:266a2468cb81c6c3</string>
+	<key>IS_ADS_ENABLED</key>
+	<false/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<false/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>PROJECT_ID</key>
+	<string>akswiftauth0testapp</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.514652084725-lbq4ulvpadvb4mmumqg7q3b46mvnshcd</string>
+	<key>TwitterConsumerKey</key>
+	<string>TNDABmgYSVFxdJPCfwIprTXmG</string>
+	<key>TwitterConsumerSecret</key>
+	<string>jMwW5QvcPPPpB94lWtYKkJdG3ETmy5x2iaBiBHH7TQBDve1jzi</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

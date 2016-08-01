@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import Lock
-import LockTwitter
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,15 +17,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         A0Lock.sharedLock().applicationLaunchedWithOptions(launchOptions)
         
-        let twitterApiKey = NSBundle.mainBundle().objectForInfoDictionaryKey("TwitterConsumerKey") as! String
-        let twitterApiSecret = NSBundle.mainBundle().objectForInfoDictionaryKey("TwitterConsumerSecret") as! String
+        let twitterApiKey = NSBundle.mainBundle().objectForInfoDictionaryKey(kTwitterConsumerKey) as! String
+        let twitterApiSecret = NSBundle.mainBundle().objectForInfoDictionaryKey(kTwitterConsumerSecret) as! String
         let twitter = A0TwitterAuthenticator.newAuthenticatorWithKey(twitterApiKey, andSecret:twitterApiSecret)
         
-        let linkedin = A0WebViewAuthenticator(connectionName: "linkedin", lock: A0Lock.sharedLock())
-        let instagram = A0WebViewAuthenticator(connectionName: "instagram", lock: A0Lock.sharedLock())
-        let windowslive = A0WebViewAuthenticator(connectionName: "windowslive", lock: A0Lock.sharedLock())
+        let google = A0GoogleAuthenticator.newAuthenticatorWithClientId(NSBundle.mainBundle().objectForInfoDictionaryKey(kGoogleClientId) as! String)
+        
+        let linkedin = A0WebViewAuthenticator(connectionName: kLinkedInConnectionName, lock: A0Lock.sharedLock())
+        let instagram = A0WebViewAuthenticator(connectionName: kInstagramConnectionName, lock: A0Lock.sharedLock())
+        let windowslive = A0WebViewAuthenticator(connectionName: kWindowsLiveConnectionName, lock: A0Lock.sharedLock())
             
-        A0Lock.sharedLock().registerAuthenticators([twitter, linkedin, instagram, windowslive]);
+        A0Lock.sharedLock().registerAuthenticators([twitter, linkedin, instagram, windowslive, google]);
 
         A0LockLogger.logAll()
         return true

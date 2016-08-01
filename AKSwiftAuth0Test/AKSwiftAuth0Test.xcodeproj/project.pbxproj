@@ -12,11 +12,10 @@
 		228153631D4795D000F030F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 228153611D4795D000F030F0 /* Main.storyboard */; };
 		228153651D4795D000F030F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 228153641D4795D000F030F0 /* Assets.xcassets */; };
 		228153681D4795D000F030F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 228153661D4795D000F030F0 /* LaunchScreen.storyboard */; };
-		ACFB3FCB5D93764C25D76944 /* Pods_AKSwiftAuth0Test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0710811C1996338CB8844E33 /* Pods_AKSwiftAuth0Test.framework */; };
+		2289D0FD1D4FCB6D00613616 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2289D0FC1D4FCB6D00613616 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0710811C1996338CB8844E33 /* Pods_AKSwiftAuth0Test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AKSwiftAuth0Test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2281535A1D4795D000F030F0 /* AKSwiftAuth0Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AKSwiftAuth0Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2281535D1D4795D000F030F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2281535F1D4795D000F030F0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +23,8 @@
 		228153641D4795D000F030F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		228153671D4795D000F030F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		228153691D4795D000F030F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2289D0F81D4FC8AF00613616 /* AKSwiftAuth0Test-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AKSwiftAuth0Test-Bridging-Header.h"; sourceTree = "<group>"; };
+		2289D0FC1D4FCB6D00613616 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5336ED074862B09B409FCC7A /* Pods-AKSwiftAuth0Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AKSwiftAuth0Test.release.xcconfig"; path = "Pods/Target Support Files/Pods-AKSwiftAuth0Test/Pods-AKSwiftAuth0Test.release.xcconfig"; sourceTree = "<group>"; };
 		E486EB7B33151DB66BA13E4F /* Pods-AKSwiftAuth0Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AKSwiftAuth0Test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AKSwiftAuth0Test/Pods-AKSwiftAuth0Test.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -33,7 +34,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACFB3FCB5D93764C25D76944 /* Pods_AKSwiftAuth0Test.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,6 +47,7 @@
 				2281535B1D4795D000F030F0 /* Products */,
 				B68F5D8A99CE340F6B7A4BAB /* Pods */,
 				42C4698A501A2DD5D335CE55 /* Frameworks */,
+				2289D0F81D4FC8AF00613616 /* AKSwiftAuth0Test-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -61,6 +62,7 @@
 		2281535C1D4795D000F030F0 /* AKSwiftAuth0Test */ = {
 			isa = PBXGroup;
 			children = (
+				2289D0FC1D4FCB6D00613616 /* GoogleService-Info.plist */,
 				2281535D1D4795D000F030F0 /* AppDelegate.swift */,
 				2281535F1D4795D000F030F0 /* ViewController.swift */,
 				228153611D4795D000F030F0 /* Main.storyboard */,
@@ -74,7 +76,6 @@
 		42C4698A501A2DD5D335CE55 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0710811C1996338CB8844E33 /* Pods_AKSwiftAuth0Test.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -150,6 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				228153681D4795D000F030F0 /* LaunchScreen.storyboard in Resources */,
+				2289D0FD1D4FCB6D00613616 /* GoogleService-Info.plist in Resources */,
 				228153651D4795D000F030F0 /* Assets.xcassets in Resources */,
 				228153631D4795D000F030F0 /* Main.storyboard in Resources */,
 			);
@@ -327,10 +329,13 @@
 			baseConfigurationReference = E486EB7B33151DB66BA13E4F /* Pods-AKSwiftAuth0Test.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = AKSwiftAuth0Test/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.akvelon.AKSwiftAuth0Test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AKSwiftAuth0Test-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -339,10 +344,12 @@
 			baseConfigurationReference = 5336ED074862B09B409FCC7A /* Pods-AKSwiftAuth0Test.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = AKSwiftAuth0Test/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.akvelon.AKSwiftAuth0Test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AKSwiftAuth0Test-Bridging-Header.h";
 			};
 			name = Release;
 		};
