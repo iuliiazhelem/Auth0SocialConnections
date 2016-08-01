@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		226B291E1D4F841E008A7690 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 226B291D1D4F841E008A7690 /* GoogleService-Info.plist */; };
 		2281533C1D4794DA00F030F0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2281533B1D4794DA00F030F0 /* main.m */; };
 		2281533F1D4794DA00F030F0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2281533E1D4794DA00F030F0 /* AppDelegate.m */; };
 		228153421D4794DA00F030F0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 228153411D4794DA00F030F0 /* ViewController.m */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		2214BD3C1D4B5FB30000CEA4 /* AppConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppConstants.h; sourceTree = "<group>"; };
+		226B291D1D4F841E008A7690 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		228153371D4794DA00F030F0 /* AKAuth0TestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AKAuth0TestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2281533B1D4794DA00F030F0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2281533D1D4794DA00F030F0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 		228153391D4794DA00F030F0 /* AKAuth0TestApp */ = {
 			isa = PBXGroup;
 			children = (
+				226B291D1D4F841E008A7690 /* GoogleService-Info.plist */,
 				2214BD3C1D4B5FB30000CEA4 /* AppConstants.h */,
 				2281533D1D4794DA00F030F0 /* AppDelegate.h */,
 				2281533E1D4794DA00F030F0 /* AppDelegate.m */,
@@ -166,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2281534A1D4794DA00F030F0 /* LaunchScreen.storyboard in Resources */,
+				226B291E1D4F841E008A7690 /* GoogleService-Info.plist in Resources */,
 				228153471D4794DA00F030F0 /* Assets.xcassets in Resources */,
 				228153451D4794DA00F030F0 /* Main.storyboard in Resources */,
 			);
@@ -344,6 +348,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AKAuth0TestApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.akvelon.AKAuth0TestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -356,6 +361,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AKAuth0TestApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.akvelon.AKAuth0TestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -17,6 +17,7 @@
 - (IBAction)clickTwitterButton:(id)sender;
 - (IBAction)clickOpenLockUIButton:(id)sender;
 - (IBAction)clickMicrosoftAccountButton:(id)sender;
+- (IBAction)clickGoogleButton:(id)sender;
 
 @end
 
@@ -102,6 +103,22 @@
                                                               parameters:nil
                                                                  success:success
                                                                  failure:error];
+}
+
+- (IBAction)clickGoogleButton:(id)sender {
+    void(^success)(A0UserProfile *, A0Token *) = ^(A0UserProfile *profile, A0Token *token) {
+        NSLog(@"User: %@", profile);
+    };
+    void(^error)(NSError *) = ^(NSError *error) {
+        NSLog(@"Oops something went wrong: %@", error);
+        
+    };
+    A0Lock *lock = [A0Lock sharedLock];
+    [[lock identityProviderAuthenticator] authenticateWithConnectionName:kGoogleConnectionName
+                                                              parameters:nil
+                                                                 success:success
+                                                                 failure:error];
+
 }
 
 @end
