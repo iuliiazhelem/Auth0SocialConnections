@@ -100,7 +100,6 @@
         <string>UIInterfaceOrientationLandscapeLeft</string>
         <string>UIInterfaceOrientationLandscapeRight</string>
     </array>
-    
     <key>CLIENT_ID</key>
     <string>514652084725-lbq4ulvpadvb4mmumqg7q3b46mvnshcd.apps.googleusercontent.com</string>
     <key>REVERSED_CLIENT_ID</key>
@@ -109,7 +108,6 @@
     <string>1</string>
     <key>BUNDLE_ID</key>
     <string>com.akvelon.AKAuth0TestApp</string>
-    
     <key>PROJECT_ID</key>
     <string>akauth0testapp</string>
     <key>IS_ADS_ENABLED</key>
