@@ -6,6 +6,7 @@
 #import <Lock/Lock.h>
 #import <Lock-Twitter/A0TwitterAuthenticator.h>
 #import <Lock-Google/A0GoogleAuthenticator.h>
+#import <SimpleKeychain.h>
 
 static NSString *kLinkedInConnectionName = @"linkedin";
 static NSString *kInstagramConnectionName = @"instagram";

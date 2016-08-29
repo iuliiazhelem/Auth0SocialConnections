@@ -3,11 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>Auth0ClientId</key>
-	<string>1T8XeajR2FhDBAAz7JQ22mmzqCMoqzud</string>
+	<string>{CLIENT_ID}</string>
 	<key>Auth0Domain</key>
-	<string>juliazhelem.eu.auth0.com</string>
+	<string>{DOMAIN}</string>
 	<key>BUNDLE_ID</key>
-	<string>com.akvelon.AKSwiftAuth0Test</string>
+	<string>com.auth0.AKSwiftAuth0Test</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -61,7 +61,7 @@
 			<string>None</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.akvelon.AKSwiftAuth0Test</string>
+				<string>com.auth0.AKSwiftAuth0Test</string>
 			</array>
 		</dict>
 	</array>
