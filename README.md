@@ -1,6 +1,6 @@
 # Auth0SocialConnections
 
-This sample exposes how to integrate Auth0 social connection (Microsoft, Google, Twitter, LinkedIn, Instagram) into your application.
+This sample exposes how to integrate social connection (Microsoft, Google, Twitter, LinkedIn, Instagram) using Auth0.
 
 For this you need to add the following to your `Podfile`:
 ```
