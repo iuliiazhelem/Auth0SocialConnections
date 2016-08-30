@@ -2,6 +2,54 @@
 
 This sample exposes how to integrate Auth0 social connection (Microsoft, Google, Twitter, LinkedIn, Instagram) into your application.
 
+For this you need to add the following to your `Podfile`:
+```
+  pod 'Lock', '~> 1.24'
+  pod 'Lock-Twitter', '~> 1.1'
+  pod 'Lock-Google', '~> 2.0'
+  pod 'SimpleKeychain'
+```
+
+## Important Snippets
+
+### Step 1: Register authenticator 
+```swift
+  let linkedin = A0WebViewAuthenticator(connectionName: kLinkedInConnectionName, lock: A0Lock.sharedLock())
+  A0Lock.sharedLock().registerAuthenticators([linkedin]);
+```
+
+```Objective-C
+  A0Lock *lock = [A0Lock sharedLock];
+  A0WebViewAuthenticator *linkedin = [[A0WebViewAuthenticator alloc] initWithConnectionName:kLinkedInConnectionName lock:lock];
+  [lock registerAuthenticators:@[twitter, linkedin, instagram, windowslive, google]];
+```
+
+### Step 2: Authenticate with Connection name 
+```swift
+  let success = { (profile: A0UserProfile, token: A0Token) in
+    print("User: \(profile)")
+  }
+  let failure = { (error: NSError) in
+    print("Oops something went wrong: \(error)")
+  }
+  let lock = A0Lock.sharedLock()
+  lock.identityProviderAuthenticator().authenticateWithConnectionName(name, parameters: nil, success: success, failure: failure)
+```
+
+```Objective-C
+  void(^success)(A0UserProfile *, A0Token *) = ^(A0UserProfile *profile, A0Token *token) {
+    NSLog(@"User: %@", profile);
+  };
+  void(^error)(NSError *) = ^(NSError *error) {
+    NSLog(@"Oops something went wrong: %@", error);
+  };
+    
+  A0Lock *lock = [A0Lock sharedLock];
+  [[lock identityProviderAuthenticator] authenticateWithConnectionName:connectionName
+                                                            parameters:nil
+                                                               success:success
+                                                               failure:error];
+```
 
 Before using the example please make sure that you change some keys in `Info.plist` with your data:
 
