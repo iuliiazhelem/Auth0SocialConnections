@@ -25,19 +25,7 @@
 		228153691D4795D000F030F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2289D0FC1D4FCB6D00613616 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		22C752B31D742F6B00C57221 /* AKSwiftAuth0Test-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AKSwiftAuth0Test-Bridging-Header.h"; sourceTree = "<group>"; };
-		5336ED074862B09B409FCC7A /* Pods-AKSwiftAuth0Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AKSwiftAuth0Test.release.xcconfig"; path = "Pods/Target Support Files/Pods-AKSwiftAuth0Test/Pods-AKSwiftAuth0Test.release.xcconfig"; sourceTree = "<group>"; };
-		E486EB7B33151DB66BA13E4F /* Pods-AKSwiftAuth0Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AKSwiftAuth0Test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AKSwiftAuth0Test/Pods-AKSwiftAuth0Test.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		228153571D4795D000F030F0 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		228153511D4795D000F030F0 = {
@@ -45,8 +33,6 @@
 			children = (
 				2281535C1D4795D000F030F0 /* AKSwiftAuth0Test */,
 				2281535B1D4795D000F030F0 /* Products */,
-				B68F5D8A99CE340F6B7A4BAB /* Pods */,
-				42C4698A501A2DD5D335CE55 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,22 +59,6 @@
 			path = AKSwiftAuth0Test;
 			sourceTree = "<group>";
 		};
-		42C4698A501A2DD5D335CE55 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		B68F5D8A99CE340F6B7A4BAB /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				E486EB7B33151DB66BA13E4F /* Pods-AKSwiftAuth0Test.debug.xcconfig */,
-				5336ED074862B09B409FCC7A /* Pods-AKSwiftAuth0Test.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -96,12 +66,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2281536C1D4795D000F030F0 /* Build configuration list for PBXNativeTarget "AKSwiftAuth0Test" */;
 			buildPhases = (
-				677A7C14A65C5CF577375E6D /* [CP] Check Pods Manifest.lock */,
 				228153561D4795D000F030F0 /* Sources */,
-				228153571D4795D000F030F0 /* Frameworks */,
 				228153581D4795D000F030F0 /* Resources */,
-				28638824A79E707B9A46C9AC /* [CP] Embed Pods Frameworks */,
-				264B3B4FB2E53FF8A6070766 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -159,52 +125,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		264B3B4FB2E53FF8A6070766 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AKSwiftAuth0Test/Pods-AKSwiftAuth0Test-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		28638824A79E707B9A46C9AC /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AKSwiftAuth0Test/Pods-AKSwiftAuth0Test-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		677A7C14A65C5CF577375E6D /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -326,7 +246,6 @@
 		};
 		2281536D1D4795D000F030F0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E486EB7B33151DB66BA13E4F /* Pods-AKSwiftAuth0Test.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -341,7 +260,6 @@
 		};
 		2281536E1D4795D000F030F0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5336ED074862B09B409FCC7A /* Pods-AKSwiftAuth0Test.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
