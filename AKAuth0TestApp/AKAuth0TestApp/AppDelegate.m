@@ -19,7 +19,11 @@
     NSString *twitterApiKey = [[NSBundle mainBundle] objectForInfoDictionaryKey:kTwitterConsumerKey];
     NSString *twitterApiSecret = [[NSBundle mainBundle] objectForInfoDictionaryKey:kTwitterConsumerSecret];
     A0TwitterAuthenticator *twitter = [A0TwitterAuthenticator newAuthenticatorWithKey:twitterApiKey andSecret:twitterApiSecret];
-    A0GoogleAuthenticator *google = [A0GoogleAuthenticator newAuthenticatorWithClientId:[[NSBundle mainBundle] objectForInfoDictionaryKey:kGoogleClientId]];
+    
+    A0GoogleAuthenticator *google = [A0GoogleAuthenticator newAuthenticator];
+    google.clientProvider = lock;
+    //Need for configuring the google authenticator from GoogleService-Info.plist
+    [google applicationLaunchedWithOptions:launchOptions];
 
     A0WebViewAuthenticator *linkedin = [[A0WebViewAuthenticator alloc] initWithConnectionName:kLinkedInConnectionName lock:lock];
     A0WebViewAuthenticator *instagram = [[A0WebViewAuthenticator alloc] initWithConnectionName:kInstagramConnectionName lock:lock];

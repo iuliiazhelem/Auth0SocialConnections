@@ -15,11 +15,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var userIdLabel: UILabel!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
     @IBAction func clickOpenLockUIButton(sender: AnyObject) {
         let controller = A0Lock.sharedLock().newLockViewController()
         controller.closable = true

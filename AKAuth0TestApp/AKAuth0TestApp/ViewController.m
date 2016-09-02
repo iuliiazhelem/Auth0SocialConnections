@@ -31,11 +31,6 @@ static NSString *kKeychainName = @"Auth0";
 
 @implementation ViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-}
-
 - (IBAction)clickLinkedInButton:(id)sender {
     [self socialAuthenticateWithName:kLinkedInConnectionName];
 }

@@ -68,7 +68,6 @@
 		228153391D4794DA00F030F0 /* AKAuth0TestApp */ = {
 			isa = PBXGroup;
 			children = (
-				226B291D1D4F841E008A7690 /* GoogleService-Info.plist */,
 				2214BD3C1D4B5FB30000CEA4 /* AppConstants.h */,
 				2281533D1D4794DA00F030F0 /* AppDelegate.h */,
 				2281533E1D4794DA00F030F0 /* AppDelegate.m */,
@@ -77,6 +76,7 @@
 				228153431D4794DA00F030F0 /* Main.storyboard */,
 				228153461D4794DA00F030F0 /* Assets.xcassets */,
 				228153481D4794DA00F030F0 /* LaunchScreen.storyboard */,
+				226B291D1D4F841E008A7690 /* GoogleService-Info.plist */,
 				2281534B1D4794DA00F030F0 /* Info.plist */,
 				2281533A1D4794DA00F030F0 /* Supporting Files */,
 			);
