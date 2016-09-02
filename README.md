@@ -7,6 +7,7 @@ For this you need to add the following to your `Podfile`:
 pod 'Lock', '~> 1.24'
 pod 'Lock-Twitter', '~> 1.1'
 pod 'Lock-Google', '~> 2.0'
+pod 'GoogleUtilities', '1.1.0'
 pod 'SimpleKeychain'
 ```
 
@@ -14,14 +15,26 @@ pod 'SimpleKeychain'
 
 ### Step 1: Register the Authenticator 
 ```swift
-let linkedin = A0WebViewAuthenticator(connectionName: kLinkedInConnectionName, lock: A0Lock.sharedLock())
-A0Lock.sharedLock().registerAuthenticators([linkedin]);
+let linkedin = A0WebViewAuthenticator(connectionName: "linkedin", lock: A0Lock.sharedLock())
+
+let google = A0GoogleAuthenticator.newAuthenticator()
+google.clientProvider = A0Lock.sharedLock()
+//Need for configuring the google authenticator from GoogleService-Info.plist
+google.applicationLaunchedWithOptions(launchOptions)
+
+A0Lock.sharedLock().registerAuthenticators([linkedin, google]);
 ```
 
 ```Objective-C
 A0Lock *lock = [A0Lock sharedLock];
-A0WebViewAuthenticator *linkedin = [[A0WebViewAuthenticator alloc] initWithConnectionName:kLinkedInConnectionName lock:lock];
-[lock registerAuthenticators:@[twitter, linkedin, instagram, windowslive, google]];
+A0WebViewAuthenticator *linkedin = [[A0WebViewAuthenticator alloc] initWithConnectionName:@"linkedin" lock:lock];
+
+A0GoogleAuthenticator *google = [A0GoogleAuthenticator newAuthenticator];
+google.clientProvider = lock;
+//Need for configuring the google authenticator from GoogleService-Info.plist
+[google applicationLaunchedWithOptions:launchOptions];
+
+[lock registerAuthenticators:@[linkedin, google]];
 ```
 
 ### Step 2: Authenticate with a Connection name 
@@ -75,10 +88,25 @@ Before using the example please make sure that you change some keys in the `Info
 - TwitterConsumerKey
 - TwitterConsumerSecret
 
-##### Google data from the `GoogleServices-Info.plist` file which you can download from [this wizard](https://developers.google.com/mobile/add?platform=ios). For more details about connecting your app to Google see [this link](https://auth0.com/docs/connections/social/google) and [this iOS doc](https://auth0.com/docs/libraries/lock-ios/native-social-authentication#google):
 
-- GOOGLE_APP_ID
-- REVERSED_CLIENT_ID
+##### Facebook data from the configured [social connection](https://manage.auth0.com/#/connections/social). For more details about connecting your app to Facebook see [this link](https://auth0.com/docs/connections/social/facebook):
+
+- FacebookAppID
+- CFBundleURLSchemes
+
+```
+<key>CFBundleTypeRole</key>
+<string>None</string>
+<key>CFBundleURLName</key>
+<string>facebook</string>
+<key>CFBundleURLSchemes</key>
+<array>
+<string>fb{FACEBOOK_APP_ID}</string>
+</array>
+```
+
+##### You need to download your own `GoogleServices-Info.plist` file from [this wizard](https://developers.google.com/mobile/add?platform=ios) and replace it with existing file. Also please find REVERSED_CLIENT_ID in this file and add it to CFBundleURLSchemes. For more details about connecting your app to Google see [this link](https://auth0.com/docs/connections/social/google) and [this iOS doc](https://auth0.com/docs/libraries/lock-ios/native-social-authentication#google):
+
 - CFBundleURLSchemes
 
 ```
@@ -95,7 +123,8 @@ Before using the example please make sure that you change some keys in the `Info
 For more information about social connections with Auth0 please check the following links:
 
 * [Google](https://auth0.com/docs/connections/social/google)
-* [Twitter](http://docs.aws.amazon.com/mobile/sdkforios/developerguide/)
+* [Facebook](https://auth0.com/docs/connections/social/facebook)
+* [Twitter](https://auth0.com/docs/connections/social/twitter)
 * [LinkedIn](https://auth0.com/docs/connections/social/linkedin)
 * [Instagram](https://auth0.com/docs/connections/social/instagram)
 * [Microsoft](https://auth0.com/docs/connections/social/microsoft-account)
