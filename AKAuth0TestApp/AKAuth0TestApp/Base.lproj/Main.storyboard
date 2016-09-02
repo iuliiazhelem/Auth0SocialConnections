@@ -62,10 +62,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="094-jR-kF3">
-                                <rect key="frame" x="20" y="148" width="211" height="30"/>
+                                <rect key="frame" x="20" y="148" width="102" height="30"/>
                                 <color key="backgroundColor" red="0.49803921569999998" green="0.49803921569999998" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <state key="normal" title="Microsoft Account">
+                                <state key="normal" title="Microsoft">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -116,6 +116,17 @@
                                 </state>
                                 <connections>
                                     <action selector="clickLogoutButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PRv-oS-zIG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XW7-Yr-YcW">
+                                <rect key="frame" x="129" y="148" width="102" height="30"/>
+                                <color key="backgroundColor" red="0.49803921569999998" green="0.49803921569999998" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="Facebook">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickFacebookButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ncT-xR-aCh"/>
                                 </connections>
                             </button>
                         </subviews>

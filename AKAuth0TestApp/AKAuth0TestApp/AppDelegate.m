@@ -7,6 +7,7 @@
 #import <Lock/Lock.h>
 #import <Lock-Twitter/A0TwitterAuthenticator.h>
 #import <Lock-Google/A0GoogleAuthenticator.h>
+#import <Lock-Facebook/A0FacebookAuthenticator.h>
 #import "AppConstants.h"
 
 @implementation AppDelegate
@@ -20,6 +21,8 @@
     NSString *twitterApiSecret = [[NSBundle mainBundle] objectForInfoDictionaryKey:kTwitterConsumerSecret];
     A0TwitterAuthenticator *twitter = [A0TwitterAuthenticator newAuthenticatorWithKey:twitterApiKey andSecret:twitterApiSecret];
     
+    A0FacebookAuthenticator *facebook = [A0FacebookAuthenticator newAuthenticatorWithDefaultPermissions];
+    
     A0GoogleAuthenticator *google = [A0GoogleAuthenticator newAuthenticator];
     google.clientProvider = lock;
     //Need for configuring the google authenticator from GoogleService-Info.plist
@@ -29,7 +32,7 @@
     A0WebViewAuthenticator *instagram = [[A0WebViewAuthenticator alloc] initWithConnectionName:kInstagramConnectionName lock:lock];
     A0WebViewAuthenticator *windowslive = [[A0WebViewAuthenticator alloc] initWithConnectionName:kWindowsLiveConnectionName lock:lock];
     
-    [lock registerAuthenticators:@[twitter, linkedin, instagram, windowslive, google]];
+    [lock registerAuthenticators:@[twitter, linkedin, instagram, windowslive, google, facebook]];
     
     [A0LockLogger logAll];
 

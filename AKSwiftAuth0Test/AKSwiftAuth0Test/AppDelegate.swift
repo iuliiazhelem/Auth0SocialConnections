@@ -17,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let twitterApiKey = NSBundle.mainBundle().objectForInfoDictionaryKey(kTwitterConsumerKey) as! String
         let twitterApiSecret = NSBundle.mainBundle().objectForInfoDictionaryKey(kTwitterConsumerSecret) as! String
         let twitter = A0TwitterAuthenticator.newAuthenticatorWithKey(twitterApiKey, andSecret:twitterApiSecret)
+    
+        let facebook = A0FacebookAuthenticator.newAuthenticatorWithDefaultPermissions();
         
         let google = A0GoogleAuthenticator.newAuthenticator()
         google.clientProvider = A0Lock.sharedLock()
@@ -27,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let instagram = A0WebViewAuthenticator(connectionName: kInstagramConnectionName, lock: A0Lock.sharedLock())
         let windowslive = A0WebViewAuthenticator(connectionName: kWindowsLiveConnectionName, lock: A0Lock.sharedLock())
             
-        A0Lock.sharedLock().registerAuthenticators([twitter, linkedin, instagram, windowslive, google]);
+        A0Lock.sharedLock().registerAuthenticators([twitter, linkedin, instagram, windowslive, google, facebook]);
 
         A0LockLogger.logAll()
         return true

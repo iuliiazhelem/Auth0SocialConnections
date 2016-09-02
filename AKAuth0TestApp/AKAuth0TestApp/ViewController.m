@@ -21,6 +21,7 @@ static NSString *kKeychainName = @"Auth0";
 - (IBAction)clickTwitterButton:(id)sender;
 - (IBAction)clickOpenLockUIButton:(id)sender;
 - (IBAction)clickMicrosoftAccountButton:(id)sender;
+- (IBAction)clickFacebookButton:(id)sender;
 - (IBAction)clickGoogleButton:(id)sender;
 - (IBAction)clickLogoutButton:(id)sender;
 
@@ -59,6 +60,10 @@ static NSString *kKeychainName = @"Auth0";
 
 - (IBAction)clickMicrosoftAccountButton:(id)sender {
     [self socialAuthenticateWithName:kWindowsLiveConnectionName];
+}
+
+- (IBAction)clickFacebookButton:(id)sender {
+    [self socialAuthenticateWithName:kFacebookConnectionName];
 }
 
 - (IBAction)clickGoogleButton:(id)sender {

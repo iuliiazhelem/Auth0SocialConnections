@@ -7,6 +7,7 @@
 #define AppConstants_h
 
 static NSString *kLinkedInConnectionName = @"linkedin";
+static NSString *kFacebookConnectionName = @"facebook";
 static NSString *kInstagramConnectionName = @"instagram";
 static NSString *kTwitterConnectionName = @"twitter";
 static NSString *kGoogleConnectionName = @"google-oauth2";

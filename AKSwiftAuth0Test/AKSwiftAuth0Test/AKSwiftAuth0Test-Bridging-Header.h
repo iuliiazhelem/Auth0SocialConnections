@@ -6,9 +6,11 @@
 #import <Lock/Lock.h>
 #import <Lock-Twitter/A0TwitterAuthenticator.h>
 #import <Lock-Google/A0GoogleAuthenticator.h>
+#import <Lock-Facebook/A0FacebookAuthenticator.h>
 #import <SimpleKeychain.h>
 
 static NSString *kLinkedInConnectionName = @"linkedin";
+static NSString *kFacebookConnectionName = @"facebook";
 static NSString *kInstagramConnectionName = @"instagram";
 static NSString *kTwitterConnectionName = @"twitter";
 static NSString *kGoogleConnectionName = @"google-oauth2";

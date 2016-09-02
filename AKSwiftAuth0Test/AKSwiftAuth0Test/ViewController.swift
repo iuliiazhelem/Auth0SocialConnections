@@ -41,6 +41,10 @@ class ViewController: UIViewController {
     @IBAction func clickMicrosoftAccountButton(sender: AnyObject) {
         self.socialAuthenticateWithName(kWindowsLiveConnectionName)
     }
+
+    @IBAction func clickFacebookButton(sender: AnyObject) {
+        self.socialAuthenticateWithName(kFacebookConnectionName)
+    }
     
     @IBAction func clickGoogleButton(sender: AnyObject) {
         self.socialAuthenticateWithName(kGoogleConnectionName)
